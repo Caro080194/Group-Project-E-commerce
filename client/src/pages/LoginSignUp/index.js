@@ -36,7 +36,7 @@ const LoginSignUp = () => {
     event.preventDefault();
     setButtonText("Getting your info");
     try {
-      const response = await fetch("/login", {
+      const response = await fetch("https://e-wear-emporium-bb9ddc8904ce.herokuapp.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -112,7 +112,7 @@ const LoginSignUp = () => {
         password,
         confirmPassword,
       } = formData;
-      const response = await fetch("/signUp", {
+      const response = await fetch("https://e-wear-emporium-bb9ddc8904ce.herokuapp.com/signUp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

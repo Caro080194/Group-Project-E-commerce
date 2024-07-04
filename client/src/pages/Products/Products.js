@@ -27,7 +27,7 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch(`/products`);
+        const res = await fetch(`https://e-wear-emporium-bb9ddc8904ce.herokuapp.com/products`);
         const { data } = await res.json();
         setProducts(data);
       } catch (err) {
@@ -44,8 +44,7 @@ const Products = () => {
     setProducts(null);
     try {
       const res = await fetch(
-        `/products?sort=${sortParam ? sortParam : sortBy}&filters=${
-          filtersParam ? filtersParam.toString() : filters.toString()
+        `/products?sort=${sortParam ? sortParam : sortBy}&filters=${filtersParam ? filtersParam.toString() : filters.toString()
         }&all=${availOnly}`
       );
       const { data } = await res.json();
@@ -67,9 +66,9 @@ const Products = () => {
     // if filter array contains value,
     filters.includes(checkedFilter)
       ? // remove it from array,
-        setFilters(filters.filter((category) => category !== checkedFilter))
+      setFilters(filters.filter((category) => category !== checkedFilter))
       : // otherwise add to array
-        setFilters([...filters, checkedFilter]);
+      setFilters([...filters, checkedFilter]);
   };
 
   // sets user-selected availabilty option
@@ -98,7 +97,7 @@ const Products = () => {
       <All>All Products {products ? `(${products.length})` : ""}</All>
 
       <Filters
-      // passes filter/sort selections down to Filters component
+        // passes filter/sort selections down to Filters component
         filtersHandler={filtersHandler}
         applyFilters={applyFilters}
         stockFilter={stockFilter}

@@ -2,13 +2,22 @@
 
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 4000;
 
+// CORS options to allow requests from frontend domain
+const corsOptions = {
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
 //require the handlers
-const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getItemHandler, deleteItemHandler} = require("./handlers");
+const { getProductsHandler, getProductHandler, getBrandsHandler, getLoginHandler, newUserHandler, createOrderHandler, getItemHandler, deleteItemHandler } = require("./handlers");
 
 express()
+  .use(cors(corsOptions))
   .use(function (req, res, next) {
     res.header(
       'Access-Control-Allow-Methods',
@@ -33,7 +42,7 @@ express()
 
   //  getProductHandler -> returns specific item from db using _id
   .get("/products/:_id", getProductHandler)
-  
+
 
 
 
