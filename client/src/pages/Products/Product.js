@@ -31,7 +31,7 @@ const Product = () => {
     // fetches info of selected product
     const getProduct = async () => {
       try {
-        const res = await fetch(`/products/${productId}`);
+        const res = await fetch(`https://e-wear-emporium-bb9ddc8904ce.herokuapp.com/products/${productId}`);
         const { data } = await res.json();
         // sets info for selected product if data fetch is successful
         setProductInfo(data);

@@ -12,7 +12,7 @@ const Confirm = () => {
     const { loggedInUser, isAuthenticated } = useContext(LoggedInUserContext);
     const { cart } = useContext(CartContentContext);
     const { guestInfoCheck, guestInfo } = useContext(GuestInfoContext);
-    const {updateOrderId} = useContext(OrderIdContext);
+    const { updateOrderId } = useContext(OrderIdContext);
     const navigate = useNavigate();
 
     const placeOrderHandler = async () => {
@@ -35,7 +35,7 @@ const Confirm = () => {
             }));
 
             // Send the order data to the backend
-            const response = await fetch("/checkout", {
+            const response = await fetch("https://e-wear-emporium-bb9ddc8904ce.herokuapp.com/checkout", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

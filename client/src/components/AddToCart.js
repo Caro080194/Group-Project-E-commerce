@@ -12,7 +12,7 @@ const AddToCart = ({ item, inStock, setInStock }) => {
   // useEffect hook for updating the stock when the inStock prop changes
   useEffect(() => {
     setInStock(inStock);
-    return () => {};
+    return () => { };
   }, [inStock, setInStock]);
 
   // Handler for click event on the add to cart button
@@ -20,7 +20,7 @@ const AddToCart = ({ item, inStock, setInStock }) => {
     setButtonText("Adding item...");
 
     try {
-      const response = await fetch(`/products/${item._id}`, {
+      const response = await fetch(`https://e-wear-emporium-bb9ddc8904ce.herokuapp.com/products/${item._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
