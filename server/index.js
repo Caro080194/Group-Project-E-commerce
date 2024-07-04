@@ -70,7 +70,7 @@ express()
 
   // Define route handler for the root URL (`/`)
   .get('/', (req, res) => {
-    res.send('Welcome to Motion Mind Fitness Journey!');
+    res.send('Welcome to E-Wear-Emporium');
   })
 
 
