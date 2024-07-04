@@ -68,8 +68,10 @@ express()
   // getBrands -> retrieves all brands from db
   .get("/brands", getBrandsHandler)
 
-  // 
-
+  // Define route handler for the root URL (`/`)
+  .get('/', (req, res) => {
+    res.send('Welcome to Motion Mind Fitness Journey!');
+  })
 
 
   //_______________________________________________________________
