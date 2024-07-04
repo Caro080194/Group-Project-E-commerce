@@ -167,7 +167,7 @@ const SignUp = ({
         <br />
         <br />
 
-        <button className="website-btn" type="submit" disabled={blankInputSU}>
+        <button className="website-btn" type="submit" disabled={blankInputSU} onClick={handleSignUp}>
           {btnTextSignup}
         </button>
         <br />

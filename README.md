@@ -1,8 +1,6 @@
 # E-Wear Emporium :office:
 
-
-
-Our brand focuses on selling high quality sportswear equipment at the right price. 
+This project was a collaborative effort, focusing on selling high-quality sportswear equipment at competitive prices. I played a key role in backend development, creating handlers, ensuring endpoint functionality, and integrating backend with frontend components. I also contributed to CSS styling for components such as sign-up and login.
 
 
 
