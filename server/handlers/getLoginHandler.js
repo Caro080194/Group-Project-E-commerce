@@ -1,8 +1,10 @@
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 const { MONGO_URI } = process.env;
 const bcrypt = require('bcrypt');
 const dbName = 'e-wear_emporium';
+
+console.log('MONGO_URI:', MONGO_URI);
 
 const getLoginHandler = async (req, res) => {
     const { email, password } = req.body;

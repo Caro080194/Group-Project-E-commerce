@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-require("dotenv").config();
+require('dotenv').config({ path: '../.env' });
 const { MONGO_URI } = process.env;
 const dbName = "e-wear_emporium";
 
@@ -47,8 +47,8 @@ const getProductsHandler = async (req, res) => {
   // sets stock availability parameter and formats $match mongo query
   all === "true"
     ? (matchQuery = {
-        $and: [{ category: { $in: sortFilters } }, { numInStock: { $gt: 0 } }],
-      })
+      $and: [{ category: { $in: sortFilters } }, { numInStock: { $gt: 0 } }],
+    })
     : (matchQuery = { category: { $in: sortFilters } });
 
   // retrieves products corresponding to filter and sorting parameters

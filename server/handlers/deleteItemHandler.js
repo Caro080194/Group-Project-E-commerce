@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 const { MONGO_URI } = process.env;
 const dbName = 'e-wear_emporium';
 
@@ -29,8 +29,8 @@ const deleteItemHandler = async (req, res) => {
             { _id: itemId },
             { $inc: { numInStock: +1 } }
         );
-        
-        if (!updateStock || updateStock.modifiedCount !== 1) { 
+
+        if (!updateStock || updateStock.modifiedCount !== 1) {
             return res.status(500).json({
                 status: 500,
                 message: `Failed to update stock for item: ${itemId}`,

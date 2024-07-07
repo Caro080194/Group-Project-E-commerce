@@ -3,8 +3,11 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+require('dotenv').config({ path: '../.env' });
 
 const PORT = process.env.PORT || 4000;
+console.log('MONGO_URI:', process.env.MONGO_URI);
+
 
 // CORS options to allow requests from frontend domain
 const corsOptions = {

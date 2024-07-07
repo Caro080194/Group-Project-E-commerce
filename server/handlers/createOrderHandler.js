@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 const { MONGO_URI } = process.env;
 const { v4: uuidv4 } = require('uuid');
 const dbName = 'e-wear_emporium';

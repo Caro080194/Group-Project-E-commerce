@@ -1,11 +1,11 @@
 // Set up connection to the mongo database
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 const { MONGO_URI } = process.env;
 const dbName = 'e-wear_emporium';
 
 //Retrieve all brands from Mongo data base
-const getBrandsHandler = async(req, res) => {
+const getBrandsHandler = async (req, res) => {
 
     const client = new MongoClient(MONGO_URI);
 
@@ -15,7 +15,7 @@ const getBrandsHandler = async(req, res) => {
         const brands = await db.collection("companies").find({}).toArray();
 
         if (brands.length === 0) {
-           return res.status(404).send("No brands found");
+            return res.status(404).send("No brands found");
         } else {
             return res.status(200).json({
                 status: 200,
